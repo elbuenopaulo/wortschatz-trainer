@@ -1,0 +1,21 @@
+.questiontraining-container {
+  width: 20%;
+  min-width: fit-content;
+  margin-left: 1%;
+  margin-top: 1%;
+  padding: 1%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: lightskyblue;
+}
+
+.questiontraining-container-text {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.questiontraining-container-anwser {
+  font-size: larger;
+  font-weight: 600;
+  font-style: italic;
+}

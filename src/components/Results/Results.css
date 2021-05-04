@@ -1,0 +1,25 @@
+.results-container {
+  width: 20%;
+  min-width: fit-content;
+  margin-left: 1%;
+  margin-top: 1%;
+  padding: 1%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: lightskyblue;
+}
+
+.results-container-title {
+  font-weight: bolder;
+}
+
+.results-container-text {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.results-container > Button {
+  margin-left: 2%;
+  width: fit-content;
+}
