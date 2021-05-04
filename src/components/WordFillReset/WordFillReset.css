@@ -1,0 +1,13 @@
+.wordfillreset-container {
+  width: 99%;
+  min-width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wordfillreset-container > Button {
+  margin-right: 1%;
+}

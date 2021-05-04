@@ -1,0 +1,22 @@
+.wordadding-container {
+  width: 99%;
+  min-width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-left: 1%;
+}
+
+.wordadding-container > form {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.wordadding-container > form > Button {
+  margin-left: 2%;
+}

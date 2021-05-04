@@ -1,0 +1,39 @@
+.word-list-element-container {
+  width: 100%;
+  min-width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.word-list-element {
+  width: 10%;
+  min-width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  background-color: lightskyblue;
+}
+
+.word-list-element-button {
+  margin-left: 1%;
+  min-width: fit-content;
+}
+
+.word-list-element-text {
+  font-size: larger;
+  font-weight: bolder;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.word-list-element-container > form {
+  margin-left: 10px;
+  padding-right: 10px;
+  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
