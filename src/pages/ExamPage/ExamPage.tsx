@@ -14,13 +14,13 @@ interface ExamPagePageState {
     randomWord: WordPair;
     maxPoints: number;
     errorPoints: number;
-    started: boolean;
     finished: boolean;
     
 }
 
 interface ExamPageProps {
     isExam: (isExam: boolean) => void;
+    hasStarted: boolean;
 }
 
 
@@ -28,14 +28,13 @@ class ExamPage extends React.Component<ExamPageProps, ExamPagePageState> {
 
     constructor(props: Readonly<ExamPageProps>) {
         super(props);
-
+        
         this.state = {
             wordList: LocalStorageHelper.getListOrCreateDefault(),
             language: ExamTrainingService.defineLanguage(),
             randomWord: LocalStorageHelper.getListOrCreateDefault()[0],
             errorPoints: 0,
             maxPoints: LocalStorageHelper.getListOrCreateDefault().length,
-            started: false,
             finished: false,
         }
     }
@@ -61,12 +60,12 @@ class ExamPage extends React.Component<ExamPageProps, ExamPagePageState> {
     }
 
     private startExam() {
-        this.setState((state) => ({started: true, language: ExamTrainingService.defineLanguage(), randomWord: ExamTrainingService.defineRandomWord(state.wordList)}))
+        this.setState((state) => ({language: ExamTrainingService.defineLanguage(), randomWord: ExamTrainingService.defineRandomWord(state.wordList)}))
         this.props.isExam(true);
     }
 
     private endExam() {
-        this.setState({started: false, finished: false, wordList: LocalStorageHelper.getListOrCreateDefault(), errorPoints: 0});
+        this.setState({finished: false, wordList: LocalStorageHelper.getListOrCreateDefault(), errorPoints: 0});
         this.props.isExam(false);
     }
     
@@ -74,7 +73,7 @@ class ExamPage extends React.Component<ExamPageProps, ExamPagePageState> {
         return (
             <>
             <div className='exampage-container'>
-            {this.state.started ?
+            {this.props.hasStarted ?
             (this.state.finished ?
                 <Results maxPoints={this.state.maxPoints} errorCount={this.state.errorPoints} endExam={this.endExam.bind(this)} />
                 :
