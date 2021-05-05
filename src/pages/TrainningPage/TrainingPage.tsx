@@ -46,6 +46,7 @@ class TrainingPage extends React.Component<{}, TrainingPageState> {
 
     private continueQuestions() {
         this.setState((state) => ({correct: true, language: ExamTrainingService.defineLanguage(), randomWord: ExamTrainingService.defineRandomWord(state.wordList)}));
+        this.forceUpdate();
     }
     
     public render(): React.ReactNode {
