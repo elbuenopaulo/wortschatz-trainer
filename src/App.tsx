@@ -28,11 +28,10 @@ class App extends React.PureComponent<{},AppState> {
   render() {
     return (
       <Router>
-    <Navigation isExam={this.state.isExamInProgress}/>
+        <Navigation isExam={this.state.isExamInProgress}/>
       <Switch>
-            <Route path="/exam" exact component={() => <ExamPage isExam={this.isExamInProgress.bind(this)}/>}/>
+            <Route path="/exam" exact component={() => <ExamPage isExam={this.isExamInProgress.bind(this)} hasStarted={this.state.isExamInProgress}/>}/>
             <Route path="/training" exact component={TrainingPage}/>
-            <Route path="/exam" exact component={() => <ExamPage isExam={this.isExamInProgress.bind(this)}/>}/>
             <Route path="/" exact component={CapturePage}/>
       </Switch>
     </Router>
